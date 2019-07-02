@@ -7,7 +7,13 @@
     Revisar que este corriendo:[http://localhost:9000](http://localhost:9000)   
 2. Usar sonar-scanner para generar el reporte de tu proyecto.
 
-    **Ejemplo:**
+    **Ejemplo usando el archivo sonar-project.properties**
+    
+    ```
+    docker run --rm -v $(pwd):/usr/src --link sonarqube newtmitch/sonar-scanner
+    ```
+    
+    **Ejemplo sin usar las configuraciones:**
     ```
     docker run --rm -v /Users/denisse/Documents/TW/Ejercicios/sonar-restify:/usr/src --link      sonarqube newtmitch/sonar-scanner \
     -Dsonar.projectKey=sonar-restify1 \
