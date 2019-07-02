@@ -1,0 +1,140 @@
+{
+  "findings": [
+    {
+      "module": "node-npmaudit",
+      "level": "high",
+      "code": "node-npmaudit-tough-cookie-525",
+      "offender": "tough-cookie",
+      "description": "Regular Expression Denial of Service",
+      "mitigation": "Ingested via react-scripts"
+    },
+    {
+      "module": "node-npmaudit",
+      "level": "high",
+      "code": "node-npmaudit-sshpk-606",
+      "offender": "sshpk",
+      "description": "Regular Expression Denial of Service",
+      "mitigation": "Ingested via react-scripts"
+    },
+    {
+      "module": "node-npmaudit",
+      "level": "high",
+      "code": "node-npmaudit-webpack-dev-server-725",
+      "offender": "webpack-dev-server",
+      "description": "Missing Origin Validation",
+      "mitigation": "Ingested via react-scripts"
+    },
+    {
+      "module": "node-npmaudit",
+      "level": "high",
+      "code": "node-npmaudit-tar-803",
+      "offender": "tar",
+      "description": "Arbitrary File Overwrite",
+      "mitigation": "Ingested via react-scripts"
+    },
+    {
+      "module": "node-npmaudit",
+      "level": "high",
+      "code": "node-npmaudit-js-yaml-813",
+      "offender": "js-yaml",
+      "description": "Code Injection",
+      "mitigation": "Ingested via react-scripts"
+    },
+    {
+      "module": "node-npmaudit",
+      "level": "high",
+      "code": "node-npmaudit-fstream-886",
+      "offender": "fstream",
+      "description": "Arbitrary File Overwrite",
+      "mitigation": "Ingested via react-scripts"
+    },
+    {
+      "module": "node-npmaudit",
+      "level": "medium",
+      "code": "node-npmaudit-hoek-566",
+      "offender": "hoek",
+      "description": "Prototype Pollution",
+      "mitigation": "Ingested via react-scripts"
+    },
+    {
+      "module": "node-npmaudit",
+      "level": "medium",
+      "code": "node-npmaudit-stringstream-664",
+      "offender": "stringstream",
+      "description": "Out-of-bounds Read",
+      "mitigation": "Ingested via react-scripts"
+    },
+    {
+      "module": "node-npmaudit",
+      "level": "medium",
+      "code": "node-npmaudit-js-yaml-788",
+      "offender": "js-yaml",
+      "description": "Denial of Service",
+      "mitigation": "Ingested via react-scripts"
+    },
+    {
+      "module": "node-npmaudit",
+      "level": "low",
+      "code": "node-npmaudit-debug-534",
+      "offender": "debug",
+      "description": "Regular Expression Denial of Service",
+      "mitigation": "Ingested via react-scripts"
+    },
+    {
+      "module": "node-npmaudit",
+      "level": "low",
+      "code": "node-npmaudit-deep-extend-612",
+      "offender": "deep-extend",
+      "description": "Prototype Pollution",
+      "mitigation": "Ingested via react-scripts"
+    },
+    {
+      "module": "node-npmaudit",
+      "level": "low",
+      "code": "node-npmaudit-braces-786",
+      "offender": "braces",
+      "description": "Regular Expression Denial of Service",
+      "mitigation": "Ingested via react-scripts"
+    },
+    {
+      "module": "node-npmoutdated",
+      "level": "high",
+      "code": "node-npmoutdated-react-scripts-1",
+      "offender": "react-scripts",
+      "description": "Module is one or more major versions out of date",
+      "mitigation": "Upgrade to v3.0.1 (Current: v1.0.17)"
+    },
+    {
+      "module": "node-npmoutdated",
+      "level": "medium",
+      "code": "node-npmoutdated-prop-types-2",
+      "offender": "prop-types",
+      "description": "Module is one or more minor versions out of date",
+      "mitigation": "Upgrade to v15.7.2 (Current: v15.6.0)"
+    },
+    {
+      "module": "node-npmoutdated",
+      "level": "medium",
+      "code": "node-npmoutdated-react-2",
+      "offender": "react",
+      "description": "Module is one or more minor versions out of date",
+      "mitigation": "Upgrade to v16.8.6 (Current: v16.2.0)"
+    },
+    {
+      "module": "node-npmoutdated",
+      "level": "medium",
+      "code": "node-npmoutdated-react-dom-2",
+      "offender": "react-dom",
+      "description": "Module is one or more minor versions out of date",
+      "mitigation": "Upgrade to v16.8.6 (Current: v16.2.0)"
+    },
+    {
+      "module": "node-npmoutdated",
+      "level": "medium",
+      "code": "node-npmoutdated-eslint-config-airbnb-base-2",
+      "offender": "eslint-config-airbnb-base",
+      "description": "Module is one or more minor versions out of date",
+      "mitigation": "Upgrade to v13.2.0 (Current: v13.1.0)"
+    }
+  ]
+}

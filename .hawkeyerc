@@ -1,0 +1,6 @@
+{
+    "all": true,
+    "json": "results.json",
+    "failOn": "low",
+    "showCode": true
+}

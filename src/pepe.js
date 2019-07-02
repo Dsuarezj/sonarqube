@@ -26,6 +26,17 @@ var suma4 = (numero, numero2) => {
   console.log("Una cosa");
   return numero + numero2;
 };
+
+var usefulSwitch = () => {
+  var my_day=new Date();
+
+  switch (my_day.getDay())
+  {
+    case 0:
+      console.log("Today is Sunday");
+      break;
+  }
+}
 module.exports = {
   hola,
   hola2,

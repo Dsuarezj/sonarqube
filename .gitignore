@@ -5,4 +5,5 @@ package-lock.json
 .nyc_output/
 coverage/
 .eslintcache
-
+.DS_Store
+dependency-check/
