@@ -24,28 +24,36 @@
     Revisar que este corriendo:[http://localhost:9000](http://localhost:9000)   
 1. Usar sonar-scanner para generar el reporte de tu proyecto.
 
-    **Ejemplo usando el archivo sonar-project.properties**
-    
+    **Ejemplo usando el archivo sonar-project.properties localmente**
+
     ```
     docker run -d --rm -v $(pwd):/usr/src --link sonarqube newtmitch/sonar-scanner
     ```
-    
+
+    **Ejemplo usando el archivo sonar-project.properties remoto**
+
+    ```
+    docker run -d --rm -v $(pwd):/usr/src \
+        newtmitch/sonar-scanner \
+        -Dsonar.host.url=http://10.71.20.19:9000 \
+    ```
+
     **Ejemplo sin usar las configuraciones:**
     ```
     docker run -d --rm -v /Users/denisse/Documents/TW/Ejercicios/sonar-restify:/usr/src \ 
-    --link sonarqube newtmitch/sonar-scanner \
-    -Dsonar.projectKey=sonar-restify1 \
-    -Dsonar.projectName="Sonar Restify1" \
-    -Dsonar.sources=/usr/src/src \
-    -Dsonar.tests=/usr/src/test  \
-    -Dsonar.projectVesion=1.0.0 \
-    -Dsonar.sourceEncoding=UTF-8 \
-    -Dsonar.language=js \
-    -Dsonar.javascript.file.suffixes=.js \
-    -Dsonar.cpd.js.minimumTokens=10 \
-    -Dsonar.cpd.js.minimumLines=2  \
-    -Dsonar.scm.enabled=true \
-    -Dsonar.scm.provider=git \
-    -Dsonar.javascript.lcov.reportPaths=/usr/src/coverage/lcov.info \
-    -Dsonar.eslint.reportPaths=/usr/src/report.json
+        --link sonarqube newtmitch/sonar-scanner \
+        -Dsonar.projectKey=sonar-restify1 \
+        -Dsonar.projectName="Sonar Restify1" \
+        -Dsonar.sources=/usr/src/src \
+        -Dsonar.tests=/usr/src/test  \
+        -Dsonar.projectVesion=1.0.0 \
+        -Dsonar.sourceEncoding=UTF-8 \
+        -Dsonar.language=js \
+        -Dsonar.javascript.file.suffixes=.js \
+        -Dsonar.cpd.js.minimumTokens=10 \
+        -Dsonar.cpd.js.minimumLines=2  \
+        -Dsonar.scm.enabled=true \
+        -Dsonar.scm.provider=git \
+        -Dsonar.javascript.lcov.reportPaths=/usr/src/coverage/lcov.info \
+        -Dsonar.eslint.reportPaths=/usr/src/report.json
     ```
