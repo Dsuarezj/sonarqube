@@ -1,17 +1,19 @@
 # Configurar SonarQube
 1. Levantar base de datos
     ```
-    docker run -d --name sonar-db \
-    -p 5432:5432 \
-    -e POSTGRES_PASSWORD=sonar \
-    -e POSTGRES_USER=sonar \
-    -e POSTGRES_DB=sonar \ 
-    postgres
+    docker run -d --rm --name sonar-db \
+        -v /Users/denisse/Documents/TW/Ejercicios/sonar-restify/bd:/var/lib/postgresql/data \
+        -p 5432:5432 \
+        -e POSTGRES_PASSWORD=sonar \
+        -e POSTGRES_USER=sonar \
+        -e POSTGRES_DB=sonar \
+        -e PGDATA=/var/lib/postgresql/data \
+        postgres
     ```
     
 1. Levantar sonarqube usando la base de datos anterior. Usar el siguiente comando: 
     ```
-    docker run -d --name sonarqube \
+    docker run -d --rm --name sonarqube \
         -p 9000:9000 -p 9092:9092 \
         -e SONARQUBE_JDBC_USERNAME=sonar \
         -e SONARQUBE_JDBC_PASSWORD=sonar \
@@ -25,12 +27,12 @@
     **Ejemplo usando el archivo sonar-project.properties**
     
     ```
-    docker run --rm -v $(pwd):/usr/src --link sonarqube newtmitch/sonar-scanner
+    docker run -d --rm -v $(pwd):/usr/src --link sonarqube newtmitch/sonar-scanner
     ```
     
     **Ejemplo sin usar las configuraciones:**
     ```
-    docker run --rm -v /Users/denisse/Documents/TW/Ejercicios/sonar-restify:/usr/src --link      sonarqube newtmitch/sonar-scanner \
+    docker run -d --rm -v /Users/denisse/Documents/TW/Ejercicios/sonar-restify:/usr/src --link      sonarqube newtmitch/sonar-scanner \
     -Dsonar.projectKey=sonar-restify1 \
     -Dsonar.projectName="Sonar Restify1" \
     -Dsonar.sources=/usr/src/src \
