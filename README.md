@@ -1,11 +1,26 @@
 # Configurar SonarQube
-
-1. Tener una imagen de sonarqube levantada. Usar el siguiente comando 
+1. Levantar base de datos
     ```
-    docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
+    docker run -d --name sonar-db \
+    -p 5432:5432 \
+    -e POSTGRES_PASSWORD=sonar \
+    -e POSTGRES_USER=sonar \
+    -e POSTGRES_DB=sonar \ 
+    postgres
+    ```
+    
+1. Levantar sonarqube usando la base de datos anterior. Usar el siguiente comando: 
+    ```
+    docker run -d --name sonarqube \
+        -p 9000:9000 -p 9092:9092 \
+        -e SONARQUBE_JDBC_USERNAME=sonar \
+        -e SONARQUBE_JDBC_PASSWORD=sonar \
+        -e SONARQUBE_JDBC_URL=jdbc:postgresql://sonar-db:5432/sonar \
+        --link sonar-db \
+        sonarqube
     ```
     Revisar que este corriendo:[http://localhost:9000](http://localhost:9000)   
-2. Usar sonar-scanner para generar el reporte de tu proyecto.
+1. Usar sonar-scanner para generar el reporte de tu proyecto.
 
     **Ejemplo usando el archivo sonar-project.properties**
     
