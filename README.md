@@ -10,10 +10,14 @@
         `export SONAR_DB_USER=<tu-usuario>`
     
     - En el cliente
-    
+
         `export PROJECT_PATH=<ruta-absoluta-tu-proyecto>`
         
         `export SONAR_URI=<url-puerto-de-sonarqube>`
+
+        **Ejemplo:**
+
+        `export SONAR_URI=http://10.71.20.19:9000`
 
 1. Dar permisos de ejecución a los scripts:
     

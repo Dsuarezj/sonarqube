@@ -3,4 +3,7 @@
 cd $PROJECT_PATH
 npm run coverage
 sed -i .bak 's/:.*\/src/:\/usr\/src\/src/g' ${PROJECT_PATH}/coverage/lcov.info
-docker run -d --rm -v ${PROJECT_PATH}:/usr/src newtmitch/sonar-scanner
+
+docker run --rm -v ${PROJECT_PATH}:/usr/src \
+        newtmitch/sonar-scanner \
+        -Dsonar.host.url=${SONAR_URI}
