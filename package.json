@@ -7,7 +7,8 @@
     "start": "node ./src/index.js",
     "test": "mocha",
     "coverage": "nyc --reporter=lcov --reporter=text-lcov npm run test",
-    "lint": "./node_modules/.bin/eslint --format json --output-file report.json ./src --ext .js --ext .jsx --cache "
+    "lint": "./node_modules/.bin/eslint --format json --output-file report.json ./src --ext .js --ext .jsx --cache ",
+    "sonar": "./scripts/sonar-scanner.sh"
   },
   "author": "",
   "license": "ISC",
