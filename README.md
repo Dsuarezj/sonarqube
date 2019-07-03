@@ -32,7 +32,8 @@
     
     **Ejemplo sin usar las configuraciones:**
     ```
-    docker run -d --rm -v /Users/denisse/Documents/TW/Ejercicios/sonar-restify:/usr/src --link      sonarqube newtmitch/sonar-scanner \
+    docker run -d --rm -v /Users/denisse/Documents/TW/Ejercicios/sonar-restify:/usr/src \ 
+    --link sonarqube newtmitch/sonar-scanner \
     -Dsonar.projectKey=sonar-restify1 \
     -Dsonar.projectName="Sonar Restify1" \
     -Dsonar.sources=/usr/src/src \
