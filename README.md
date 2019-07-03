@@ -2,10 +2,10 @@
 1. Levantar base de datos
     ```
     docker run -d --rm --name sonar-db \
-        -v /Users/denisse/Documents/TW/Ejercicios/sonar-restify/bd:/var/lib/postgresql/data \
+        -v ${SONAR_DB_PATH}:/var/lib/postgresql/data \
         -p 5432:5432 \
-        -e POSTGRES_PASSWORD=sonar \
-        -e POSTGRES_USER=sonar \
+        -e POSTGRES_PASSWORD=${SONAR_DB_PASSWORD} \
+        -e POSTGRES_USER=${SONAR_DB_USER} \
         -e POSTGRES_DB=sonar \
         -e PGDATA=/var/lib/postgresql/data \
         postgres
@@ -15,8 +15,8 @@
     ```
     docker run -d --rm --name sonarqube \
         -p 9000:9000 -p 9092:9092 \
-        -e SONARQUBE_JDBC_USERNAME=sonar \
-        -e SONARQUBE_JDBC_PASSWORD=sonar \
+        -e SONARQUBE_JDBC_USERNAME=${SONAR_DB_USER} \
+        -e SONARQUBE_JDBC_PASSWORD=${SONAR_DB_PASSWORD} \
         -e SONARQUBE_JDBC_URL=jdbc:postgresql://sonar-db:5432/sonar \
         --link sonar-db \
         sonarqube
@@ -27,20 +27,20 @@
     **Ejemplo usando el archivo sonar-project.properties localmente**
 
     ```
-    docker run -d --rm -v $(pwd):/usr/src --link sonarqube newtmitch/sonar-scanner
+    docker run -d --rm -v ${PROJECT_PATH}:/usr/src --link sonarqube newtmitch/sonar-scanner
     ```
 
     **Ejemplo usando el archivo sonar-project.properties remoto**
 
     ```
-    docker run -d --rm -v $(pwd):/usr/src \
+    docker run -d --rm -v ${PROJECT_PATH}:/usr/src \
         newtmitch/sonar-scanner \
-        -Dsonar.host.url=http://10.71.20.19:9000 \
+        -Dsonar.host.url=${SONAR_URI}
     ```
 
     **Ejemplo sin usar las configuraciones:**
     ```
-    docker run -d --rm -v /Users/denisse/Documents/TW/Ejercicios/sonar-restify:/usr/src \ 
+    docker run -d --rm -v ${PROJECT_PATH}:/usr/src \
         --link sonarqube newtmitch/sonar-scanner \
         -Dsonar.projectKey=sonar-restify1 \
         -Dsonar.projectName="Sonar Restify1" \
