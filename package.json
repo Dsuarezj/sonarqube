@@ -1,23 +1,11 @@
 {
-  "name": "sonar-restify",
+  "name": "sonarqube",
   "version": "1.0.0",
-  "description": "",
-  "main": "src/index.js",
+  "description": "Project to run sonarqube server and sonarscanner",
   "scripts": {
-    "start": "node ./src/index.js",
-    "test": "mocha",
-    "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
-    "lint": "./node_modules/.bin/eslint --format json --output-file report.json ./src --ext .js --ext .jsx --cache ",
     "sonar-scanner": "./scripts/sonar-scanner.sh",
     "sonar-server": "./scripts/sonar-server.sh"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "restify": "^8.3.3"
-  },
-  "devDependencies": {
-    "mocha": "^6.1.4",
-    "nyc": "^14.1.1"
-  }
+  "author": "Mateo & Denisse",
+  "license": "ISC"
 }
