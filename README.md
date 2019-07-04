@@ -8,7 +8,7 @@
 
 1. Preparar el repositorio a ser escaneado:
     1. Instalar una herramienta para generar reporte de cobertura, se recomienda usar [NYC](https://www.npmjs.com/package/nyc): `npm i nyc`  
-    1. Agregar comando `coverage` a los scripts de npm o yarn:
+    1. Agregar comando `coverage` a los scripts de del package.json:
      
         `"coverage": "nyc --reporter=lcov --reporter=text-lcov npm test"`
     2. Crear un archivo en la raíz del proyecto `sonar-project.properties` usando el template de este repositorio.
