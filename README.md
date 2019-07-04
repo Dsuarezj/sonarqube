@@ -35,8 +35,13 @@
 
     `npm run sonar-scanner`
 
+## Troubleshooting
 
 > En caso de tener un error al momento de ejecutar el script, verificar que tenga permisos de ejecución. Para dar permisos de ejecución a los scripts correr los siguientes comandos:
 
     `chmod +x scripts/sonar-scanner.sh`
     `chmod +x scripts/sonar-server.sh`
+
+> Si tiene problemas al levantar la base de datos, se recomienda crear la carpeta por linea de comandos.
+
+    `mkdir <path-deseado>/sonar-bd`
