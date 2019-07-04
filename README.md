@@ -1,10 +1,10 @@
-#Configurar SonarQube
+# Configurar SonarQube
 
-###Pre-requisitos:
+### Pre-requisitos:
     - Docker >= 2.0.0.3
     - NPM >= 6.9.0
 
-###Pasos:
+### Pasos:
 
 1. Preparar el repositorio a ser escaneado:
     1. Instalar una herramienta para generar reporte de cobertura, se recomienda usar [NYC](https://www.npmjs.com/package/nyc): `npm i nyc`  
@@ -41,7 +41,7 @@
 
     `npm run sonar-scanner`
 
-###Troubleshooting
+### Troubleshooting
 
 > En caso de tener un error al momento de ejecutar el script, verificar que tenga permisos de ejecución. Para dar permisos de ejecución a los scripts correr los siguientes comandos:
 
