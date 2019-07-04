@@ -2,10 +2,6 @@
 
 docker kill sonar-db sonarqube
 
-echo $SONAR_DB_PASSWORD
-echo $SONAR_DB_PATH
-echo $SONAR_DB_USER
-
 docker run -d --rm --name sonar-db \
         -v ${SONAR_DB_PATH}:/var/lib/postgresql/data \
         -p 5432:5432 \
@@ -17,7 +13,7 @@ docker run -d --rm --name sonar-db \
 
 sleep 10
 
-docker run --rm --name sonarqube \
+docker run -d --rm --name sonarqube \
         -p 9000:9000 -p 9092:9092 \
         -e SONARQUBE_JDBC_USERNAME=${SONAR_DB_USER} \
         -e SONARQUBE_JDBC_PASSWORD=${SONAR_DB_PASSWORD} \
