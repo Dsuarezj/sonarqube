@@ -21,4 +21,6 @@ docker run -d --rm --name sonarqube \
         --link sonar-db \
         sonarqube
 
+sleep 30
 
+docker exec -i sonar-db psql --username=sonar --no-password < $(pwd)/config-sonar.sql

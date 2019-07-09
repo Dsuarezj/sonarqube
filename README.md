@@ -22,10 +22,16 @@
         `export SONAR_DB_PASSWORD=<tu-clave-secreta>`
         
         `export SONAR_DB_USER=<tu-usuario>`
+        
+        > Luego de levantar el servidor de SonarQube, se recomienda ingresar con el *usuario:admin* & *pass:admin* para cambiar el password que viene por defecto. 
     
     - En el cliente
 
         `export PROJECT_PATH=<ruta-absoluta-tu-proyecto>`
+        
+        `export SONAR_USER=<usuario-sonar-server>`
+        
+        `export SONAR_PASSWORD=<password-sonar-server>`
         
         `export SONAR_URI=<url-puerto-de-sonarqube>`
 
@@ -36,6 +42,8 @@
 1. Levantar el servidor de sonarqube:
     
     `npm run sonar-server`
+    
+    > **Nota:** Luego de levantar sonar, ir a `Administration > Projects > Management` y cambiar la configuración `Default visibility of new projects: Private`
 
 1. Ejecutar escaneo de sonar:
 
